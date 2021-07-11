@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>AWS</title>
+  <title>AWS S3 Folders</title>
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
@@ -12,7 +12,8 @@
 </head>
 <body>
 
-<h1 align = "center">Welcome</h1>
+<h1 align = "center">AWS S3 Operations</h1>
+<p align = "center">Choose a folder to upload</p>
 
 <div class="md-padding">
   <div class="container-fluid">
