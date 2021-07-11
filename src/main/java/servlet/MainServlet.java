@@ -40,14 +40,34 @@ public class MainServlet extends HttpServlet
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-        
+        String command = request.getParameter("command");
+        if (command == null)
+        {
+            actions.get("index").doGet(request, response, this.getServletContext());
+            System.out.println("Opening command: " + "index");
+        }
+        else if (actions.containsKey(command))
+        {
+            actions.get(command).doGet(request, response, this.getServletContext());
+            System.out.println("Opening command: " + command);
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-        
+        String command = request.getParameter("command");
+        if (command == null)
+        {
+            actions.get("index").doGet(request, response, this.getServletContext());
+            System.out.println("Posting command: " + "index");
+        }
+        else if (actions.containsKey(command))
+        {
+            actions.get(command).doPost(request, response, this.getServletContext());
+            System.out.println("Posting command: " + command);
+        }
     }
 }
 
