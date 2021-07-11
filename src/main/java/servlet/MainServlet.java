@@ -28,7 +28,12 @@ public class MainServlet extends HttpServlet
     @Override
     public void init()
     {
-        
+        Command[] actions = {new IndexCommand()};
+
+        for (Command c : actions)
+        {
+            this.actions.put(c.getPattern(), c);
+        }
     }
 
     @Override
