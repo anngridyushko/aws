@@ -22,8 +22,8 @@
     <welcome-file-list>
         <welcome-file>serv</welcome-file>
     </welcome-file-list>
-	
-	<error-page>
+
+    <error-page>
         <location>/WEB-INF/view/errorPage.jsp</location>
     </error-page>
 
