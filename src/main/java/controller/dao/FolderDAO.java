@@ -6,8 +6,6 @@ import model.Folder;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import java.sql.Date;
-import java.util.ArrayList;
 import java.util.List;
 
 public class FolderDAO extends DAO
@@ -15,6 +13,10 @@ public class FolderDAO extends DAO
     public FolderDAO()
     {
         super();
+    }
+
+    public Folder getFolder(String name) {
+        return getEntityManager().find(Folder.class, name);
     }
 
     public List<Folder> readFolders()
@@ -27,17 +29,10 @@ public class FolderDAO extends DAO
         return getEntityManager().createQuery(query).getResultList();
     }
 
-    public void createEntry(String folderName, String url)
+    public void persistEntity(Folder folder)
     {
         getEntityManager().getTransaction().begin();
-
-        Folder folder = new Folder();
-        folder.setFolderName(folderName);
-        folder.setUrl(url);
-
         getEntityManager().persist(folder);
         getEntityManager().getTransaction().commit();
-
-        System.out.println("Successful insert");
     }
 }

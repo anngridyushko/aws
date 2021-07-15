@@ -4,25 +4,14 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-    <servlet>
-        <display-name>MainServlet</display-name>
-        <servlet-name>MainServlet</servlet-name>
-        <servlet-class>servlet.MainServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>MainServlet</servlet-name>
-        <url-pattern>/serv</url-pattern>
-    </servlet-mapping>
-
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>
 
     <welcome-file-list>
-        <welcome-file>serv</welcome-file>
+        <welcome-file>IndexServlet</welcome-file>
     </welcome-file-list>
-
+    
     <error-page>
         <location>/WEB-INF/view/errorPage.jsp</location>
     </error-page>

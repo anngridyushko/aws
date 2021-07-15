@@ -11,34 +11,35 @@ public class Folder
     @Column(name = "folder_name")
     private String folderName;
 
-    @Column(name = "url")
-    private String url;
+    @Column(name = "aws_key")
+    private String key;
+
+    @Column(name="is_finished")
+    private Boolean isFinished;
 
     public Folder() {}
 
-    public void setFolderName(String folderName)
-    {
-        this.folderName = folderName;
-    }
-
-    public void setUrl(String url)
-    {
-        this.url = url;
-    }
-
-    public String getFolderName()
-    {
+    public String getFolderName() {
         return folderName;
     }
 
-    public String getUrl()
-    {
-        return url;
+    public void setFolderName(String folderName) {
+        this.folderName = folderName;
     }
 
-    @Override
-    public String toString()
-    {
-        return "\nFolder #" + folderName + " with presignedURL: " + url;
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public Boolean getFinished() {
+        return isFinished;
+    }
+
+    public void setFinished(Boolean finished) {
+        isFinished = finished;
     }
 }
